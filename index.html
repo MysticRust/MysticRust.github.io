@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MysticRust: A premier Rust server offering a unique gaming experience for Solo, Duo, and Trio gameplay. Join us for exciting events, community-driven gameplay, and immersive adventures.">
+  <meta name="keywords" content="Rust, MysticRust, Rust Server, Gaming, Multiplayer, Solo, Duo, Trio, Rust Events, Gaming Community">
+  <meta name="author" content="MysticRust Team">
+
+  <meta property="og:title" content="MysticRust - The Ultimate Rust Server Experience">
+  <meta property="og:description" content="Join MysticRust for thrilling Rust gameplay, exciting events, and a vibrant community.">
+  <meta property="og:url" content="https://mysticrust.eu">
+  <meta property="og:image" content="https://mysticrust.eu/logo.png">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MysticRust - The Ultimate Rust Server Experience">
+  <meta name="twitter:description" content="Join MysticRust for thrilling Rust gameplay, exciting events, and a vibrant community.">
+  <meta name="twitter:image" content="https://mysticrust.eu/logo.png">
+
+  <title>MysticRust - The Ultimate Rust Server Experience</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <header id="section1">
+      <h1>Welcome To <span id="typewriter"></span></h1>
+      <p>Join the ultimate Rust experience on <span id="serverName"></span>! Build, explore, and survive in the best gaming environment.</p>
+      <button class="btn" id="copyButton">
+        <i class="fas fa-gamepad"></i> Join The Server
+      </button>         
+    </header>
+
+    <section id="section2">
+      <h2>Vote For ServerName</h2>
+      <p>Help us grow by voting for ServerName on the following platforms:</p>
+      <div class="vote-links">
+        <a href="https://rust-servers.net/server/173535/vote/" target="_blank">
+          <i class="fas fa-vote-yea"></i> Vote Link 1
+        </a>
+        <a href="https://bestservers.com/server/3171/vote" target="_blank">
+          <i class="fas fa-vote-yea"></i> Vote Link 2
+        </a>
+        <!-- <a href="#" target="_blank">
+          <i class="fas fa-vote-yea"></i> Vote Link 3
+        </a> -->
+      </div>
+    </section>
+
+    <section class="store-section" id="section3">
+      <h2>Store</h2>
+      <p>Support our server and unlock exclusive items!</p>
+      <a href="https://mystic-rust.tebex.io" target="_blank">
+        <i class="fas fa-store"></i> Visit Our Store
+      </a>
+    </section>
+
+    <section class="join-section" id="section4">
+      <h2>Join ServerName</h2>
+      <p>Click below to join ServerName and start your Rust adventure today!</p>
+      <a href="#">
+        <i class="fas fa-sign-in-alt"></i> Join The Server
+      </a>
+    </section>
+
+    <section class="staff-section" id="section5">
+      <h2>Meet Our Staff</h2>
+      <div class="staff">
+        <div class="staff-member">
+          <img src="https://i.imgur.com/Z6Mntyb.png" alt="Staff 2">
+          <h4>Justin Beaver</h4>
+          <p><i class="fas fa-star"></i> Administrator</p>
+        </div>
+        <div class="staff-member">
+          <img src="https://i.imgur.com/OyIfHQx.gif" alt="Staff 1">
+          <h4>Dogzocute</h4>
+          <p><i class="fas fa-wrench"></i> Developer</p>
+          <!-- <p><i class="fas fa-star"></i> Administrator</p> -->
+        </div>
+        <!-- <div class="staff-member">
+          <img src="https://via.placeholder.com/100" alt="Staff 2">
+          <h4>Staff 2</h4>
+          <p><i class="fas fa-shield-alt"></i> Moderator</p>
+        </div>
+        <div class="staff-member">
+          <img src="https://via.placeholder.com/100" alt="Staff 3">
+          <h4>Staff 3</h4>
+          <p><i class="fas fa-wrench"></i> Developer</p>
+        </div> -->
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const serverName = "MysticRust";
+    let i = 0;
+    let isDeleting = false;
+    const speed = 150;
+    const pause = 1000;
+
+    function typeWriter() {
+      const displayElement = document.getElementById("typewriter");
+
+      if (!isDeleting && i <= serverName.length) {
+        displayElement.innerHTML = serverName.substring(0, i);
+        i++;
+        setTimeout(typeWriter, speed);
+      } else if (isDeleting && i >= 0) {
+        displayElement.innerHTML = serverName.substring(0, i);
+        i--;
+        setTimeout(typeWriter, speed);
+      } else {
+        isDeleting = !isDeleting;
+        setTimeout(typeWriter, pause);
+      }
+
+      document.getElementById("serverName").innerHTML = serverName;
+    }
+
+    window.onload = function() {
+      typeWriter();
+    };
+
+    document.getElementById('copyButton').addEventListener('click', function() {
+  const serverInfo = '109.71.252.100:28015';
+  navigator.clipboard.writeText(serverInfo).then(function() {
+    alert('Server IP copied to clipboard: ' + serverInfo);
+  }, function(err) {
+    console.error('Could not copy text: ', err);
+  });
+});
+
+  </script>
+</body>
+</html>

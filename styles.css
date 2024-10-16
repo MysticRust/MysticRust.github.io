@@ -1,0 +1,189 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%; /* Ensure full height for body and html */
+    scroll-behavior: smooth; /* Smooth scroll behavior for all sections */
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f0ff;
+    color: #fff; /* Default text color: white */
+    overflow-x: hidden;
+    scroll-snap-type: y mandatory; /* Enable vertical scroll snapping */
+    overflow-y: scroll; /* Ensure the page scrolls */
+  }
+  
+  .container {
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  section, header {
+    min-height: 100vh; /* Each section will take the full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start; /* Snap the section at the start of the viewport */
+    padding: 20px; /* Add padding to avoid text touching edges */
+  }
+  
+  header h1 {
+    font-size: 4rem;
+    color: #fff;
+    text-align: center;
+    animation: fadeInDown 1s ease;
+  }
+  
+  header p {
+    font-size: 1.5rem;
+    color: #f4f0ff;
+    text-align: center;
+  }
+  
+  header .btn {
+    margin-top: 2rem;
+    padding: 0.7rem 1.5rem;
+    background-color: #fff;
+    color: #B19CD9;
+    cursor: pointer;
+    font-size: 1rem;
+    border: none;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 1s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  header .btn i {
+    font-size: 1rem;
+  }
+  
+  header .btn:hover {
+    background-color: #9A88CF;
+    color: #fff;
+    transform: translateY(-5px);
+  }
+  
+  /* Section Headings and Paragraphs */
+  section h2 {
+    font-size: 3rem;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  section p {
+    font-size: 1.2rem;
+    color: #f4f0ff; /* Ensures text is visible and white in sections */
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .vote-links a, .store-section a, .join-section a {
+    background-color: #fff;
+    color: #B19CD9;
+    padding: 0.7rem 1.5rem;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    margin-top: 2rem;
+    font-size: 1rem;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .vote-links a:hover, .store-section a:hover, .join-section a:hover {
+    background-color: #9A88CF;
+    color: #fff;
+    transform: translateY(-5px);
+  }
+  
+  /* Staff Section */
+  .staff {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+  }
+  
+  .staff-member {
+    text-align: center;
+    width: 200px;
+    animation: fadeInUp 1s ease;
+  }
+  
+  .staff-member img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+  }
+  
+  .staff-member img:hover {
+    transform: scale(1.1);
+  }
+  
+  .staff-member h4 {
+    color: #fff; /* Ensure staff names are white */
+    font-size: 1.5rem;
+  }
+  
+  .staff-member p {
+    color: #f4f0ff; /* White color for staff roles */
+    font-size: 1.2rem;
+  }
+  
+  /* Animations */
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, #B19CD9, #9A88CF, #f4f0ff);
+    background-size: 200% 200%;
+    z-index: -1;
+    animation: backgroundAnimation 10s ease infinite;
+  }
+  
+  @keyframes backgroundAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  } 
